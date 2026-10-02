@@ -20,3 +20,13 @@ Once running, open your browser and go to:
 - [http://localhost:5000/health](http://localhost:5000/health) — health check
 
 An unknown product ID, such as `/products/999`, returns **404**. Products can only be viewed; updates and deletions are not supported.
+
+## Run tests
+
+From the `demo-app` directory, after installing the dependencies, run:
+
+```sh
+python -m unittest discover -s tests
+```
+
+The tests use Flask's test client, so you do not need to start the server.
