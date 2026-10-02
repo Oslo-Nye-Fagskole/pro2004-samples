@@ -1,3 +1,3 @@
-# Terraform Web App Module (Draft)
+# Terraform Web App Module
 
-TODO: Free (F1) plan and Python Web App resources, with inputs and outputs.
+TODO: add a web app module and document its inputs and outputs.

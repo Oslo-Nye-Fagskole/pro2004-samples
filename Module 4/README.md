@@ -1,5 +1,3 @@
-# Module 4 - Decoupling Code and Feature Releases (Draft)
+# Module 4 - Decoupling Code and Feature Releases
 
-Reuse the store API for a simple feature flag and rollback demonstration.
-
-TODO: add release examples. Practise blue-green and canary concepts locally; App Service deployment slots require a paid tier and are outside the F1 exercise.
+TODO: add feature flag and release examples using the [demo app](../demo-app/).

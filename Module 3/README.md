@@ -1,5 +1,3 @@
-# Module 3 - DevOps Security Practices (Draft)
+# Module 3 - DevOps Security Practices
 
-Use the shared store API to demonstrate dependency scanning, least privilege, and OIDC deployment access.
-
-TODO: add security examples. Keep secrets out of source control; the basic app needs none.
+TODO: add security examples and exercises using the [demo app](../demo-app/).

@@ -1,3 +1,3 @@
-# Bicep Environment Inputs (Draft)
+# Bicep Environment Inputs
 
-TODO: example development parameters for names, region, and Python runtime. Production settings remain conceptual.
+TODO: add example parameters and configuration instructions.

@@ -1,24 +1,22 @@
 # Store API
 
-A small Flask API with read-only mock products. No database, credentials, or external services are needed.
+- Read-only mock product data
+- **No** database integration
+- **No** authentication/authorization
 
-From this directory, run locally (PowerShell):
+## Run instructions
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe app.py
+From the `demo-app` directory, run:
+
+```sh
+pip install -r requirements.txt
+flask run
 ```
 
-Open `http://localhost:5000/products`. Also try `/`, `/health`, `/products/1`, and `/products/999` (404).
+Once running, open your browser and go to:
 
-Run with Docker:
+- [http://localhost:5000/products](http://localhost:5000/products) — all products
+- [http://localhost:5000/products/1](http://localhost:5000/products/1) — a single product
+- [http://localhost:5000/health](http://localhost:5000/health) — health check
 
-```powershell
-docker build -t pro2004-store .
-docker run --rm -p 8000:8000 pro2004-store
-```
-
-Open `http://localhost:8000/products`. Gunicorn runs the container; `python app.py` runs Flask's local development server.
-
-For Azure, deploy this directory as the application root using the built-in Python runtime on App Service Free (F1). See [Module 1](../Module%201/README.md).
+An unknown product ID, such as `/products/999`, returns **404**. Products can only be viewed; updates and deletions are not supported.

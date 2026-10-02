@@ -1,5 +1,3 @@
-# Module 2 - DevOps and CI/CD Pipelines (Draft)
+# Module 2 - DevOps and CI/CD Pipelines
 
-Reuse the [store API](../demo-app/) and the F1 Web App from Module 1.
-
-TODO: add GitHub Actions examples for validation, artifact packaging, OIDC authentication, and deployment. Package the contents of `demo-app/` as the application root.
+TODO: add CI/CD examples and instructions using the [demo app](../demo-app/).

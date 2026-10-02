@@ -1,3 +1,3 @@
-# Terraform Development Environment (Draft)
+# Terraform Development Environment
 
-TODO: root configuration, provider requirements, and example inputs calling the Web App module. Use a separate state per environment.
+TODO: add example configuration and setup instructions.

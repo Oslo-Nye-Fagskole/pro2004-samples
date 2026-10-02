@@ -1,11 +1,12 @@
-# Code Samples - PRO2004 DevOps and Cloud Computing
+# PRO2004 DevOps and Cloud Computing
 
-This repository contains code and configuration samples from the course **[PRO2004 DevOps and Cloud Computing](https://onf.qybele.no/structure/module/overview/259.html)**.
+Code and configuration samples for [PRO2004 DevOps and Cloud Computing](https://onf.qybele.no/structure/module/overview/259.html).
 
-The examples are intentionally small and focused, illustrating specific concepts such as cloud hosting, CI/CD, DevOps security, feature flags, and Infrastructure as Code.
+- [Demo app](demo-app/)
+- [Module 1 - Cloud Fundamentals](Module%201/)
+- [Module 2 - DevOps and CI/CD Pipelines](Module%202/)
+- [Module 3 - DevOps Security Practices](Module%203/)
+- [Module 4 - Decoupling Code and Feature Releases](Module%204/)
+- [Module 5 - Infrastructure as Code](Module%205/)
 
-On their own, these samples give you something to explore and experiment with. In the course, they are connected to the learning material through theory and practical exercises.
-
-Feel free to browse, fork, and adapt the code and configuration as you learn.
-
-Try things out, make changes, and see what happens when you deploy 🚀
+TODO: add examples and exercise instructions as the course develops.

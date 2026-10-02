@@ -1,3 +1,3 @@
-# Bicep Modules (Draft)
+# Bicep Modules
 
-TODO: reusable Free (F1) plan and Python Web App definition.
+TODO: add reusable infrastructure modules.
