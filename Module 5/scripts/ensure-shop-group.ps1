@@ -1,4 +1,3 @@
-# Chapter 5.2: imperative counterpart to the declarative shop resource group.
 [CmdletBinding()]
 param(
     [Parameter(Mandatory)][string]$SubscriptionId,

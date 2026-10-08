@@ -58,7 +58,6 @@ resource app 'Microsoft.Web/sites@2024-11-01' = {
   }
 }
 
-// SCM publishing credentials support the existing Module 2 publish-profile workflow.
 resource scm 'Microsoft.Web/sites/basicPublishingCredentialsPolicies@2024-11-01' = {
   parent: app
   name: 'scm'
