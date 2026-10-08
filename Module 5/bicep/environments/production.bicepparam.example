@@ -1,0 +1,11 @@
+using '../main.bicep'
+
+// Environment-separation exercise only; still uses F1, not production capacity.
+param environment = 'production'
+param resourceGroupName = 'rg-shop-production'
+param appName = 'shop-production-YOUR-UNIQUE-SUFFIX'
+param containerImage = 'YOUR-DOCKERHUB-USERNAME/pro2004-store-api:initial'
+param location = 'westeurope'
+param tags = {
+  owner: 'YOUR-NAME'
+}

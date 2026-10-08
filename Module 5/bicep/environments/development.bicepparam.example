@@ -1,0 +1,10 @@
+using '../main.bicep'
+
+param environment = 'development'
+param resourceGroupName = 'rg-shop-development'
+param appName = 'shop-development-YOUR-UNIQUE-SUFFIX'
+param containerImage = 'YOUR-DOCKERHUB-USERNAME/pro2004-store-api:initial'
+param location = 'westeurope'
+param tags = {
+  owner: 'YOUR-NAME'
+}

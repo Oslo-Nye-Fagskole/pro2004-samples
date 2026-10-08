@@ -1,0 +1,4 @@
+subscription_id     = "YOUR-SUBSCRIPTION-ID"
+resource_group_name = "rg-shop-existing"
+location            = "westeurope"
+tags                = {}

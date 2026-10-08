@@ -1,0 +1,4 @@
+# Chapter 5.4: copy into ONE environment root as backend.tf for optional shared state.
+terraform {
+  backend "azurerm" {}
+}

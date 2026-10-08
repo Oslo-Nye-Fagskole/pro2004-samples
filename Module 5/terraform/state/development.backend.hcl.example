@@ -1,0 +1,5 @@
+storage_account_name = "YOUR-EXISTING-STORAGE-ACCOUNT"
+container_name       = "tfstate"
+key                  = "pro2004/development.tfstate"
+use_azuread_auth     = true
+use_cli             = true

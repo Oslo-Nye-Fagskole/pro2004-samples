@@ -1,0 +1,8 @@
+subscription_id     = "YOUR-SUBSCRIPTION-ID"
+resource_group_name = "rg-shop-development"
+app_name            = "shop-development-YOUR-UNIQUE-SUFFIX"
+container_image     = "YOUR-DOCKERHUB-USERNAME/pro2004-store-api:initial"
+location            = "westeurope"
+tags = {
+  owner = "YOUR-NAME"
+}

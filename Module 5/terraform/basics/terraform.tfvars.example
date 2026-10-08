@@ -1,0 +1,7 @@
+subscription_id     = "YOUR-SUBSCRIPTION-ID"
+resource_group_name = "rg-shop"
+location            = "westeurope"
+tags = {
+  environment = "development"
+  course      = "PRO2004"
+}
