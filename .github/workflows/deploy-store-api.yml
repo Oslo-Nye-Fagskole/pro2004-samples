@@ -10,9 +10,19 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      IMAGE: ${{ vars.DOCKERHUB_USERNAME }}/pro2004-store-api:${{ github.sha }}
     steps:
+      - name: Validate Docker Hub configuration
+        env:
+          # Set DOCKERHUB_USERNAME in repository Settings > Secrets and variables > Actions > Variables.
+          # An empty username produces an invalid image tag starting with '/'.
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+        run: |
+          if [ -z "$DOCKERHUB_USERNAME" ]; then
+            echo "::error::Set the DOCKERHUB_USERNAME Actions variable under Settings > Secrets and variables > Actions > Variables."
+            exit 1
+          fi
+          echo "IMAGE=$DOCKERHUB_USERNAME/pro2004-store-api:$GITHUB_SHA" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v6
