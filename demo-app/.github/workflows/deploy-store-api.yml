@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Validate Docker Hub configuration
         env:
-          # Set DOCKERHUB_USERNAME in repository Settings > Secrets and variables > Actions > Variables.
-          # An empty username produces an invalid image tag starting with '/'.
           DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
         run: |
           if [ -z "$DOCKERHUB_USERNAME" ]; then
@@ -23,9 +21,11 @@ jobs:
           fi
           echo "IMAGE=$DOCKERHUB_USERNAME/pro2004-store-api:$GITHUB_SHA" >> "$GITHUB_ENV"
 
-      - uses: actions/checkout@v6
+      - name: Get the repository code
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
           python-version: '3.13'
 
@@ -53,3 +53,6 @@ jobs:
           app-name: ${{ vars.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: ${{ env.IMAGE }}
+
+      - name: Verify the running API
+        run: curl --fail --retry 12 --retry-all-errors --retry-delay 10 --max-time 15 "https://${{ vars.AZURE_WEBAPP_HOSTNAME }}/health"

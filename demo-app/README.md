@@ -56,6 +56,7 @@ The included [deployment workflow](.github/workflows/deploy-store-api.yml) is re
    | --- | --- | --- |
    | Variable | `DOCKERHUB_USERNAME` | Your Docker Hub username |
    | Variable | `AZURE_WEBAPP_NAME` | Your Azure Web App name |
+   | Variable | `AZURE_WEBAPP_HOSTNAME` | Default hostname from Azure Overview, without `https://` or a trailing slash |
    | Secret | `DOCKERHUB_TOKEN` | Your Docker Hub access token |
    | Secret | `AZURE_WEBAPP_PUBLISH_PROFILE` | Entire downloaded publish profile contents |
 
