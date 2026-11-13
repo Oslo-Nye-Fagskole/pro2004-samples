@@ -1,6 +1,6 @@
 # Store API
 
-We suggest copying only the contents of this sample folder, including `.github/` and `workflow-examples/`, into the root of a dedicated personal GitHub repository (public or private), with any repository name you prefer. This lets you run workflows in isolation using your own Docker Hub username, credentials, and Azure configuration.
+Copy the contents of this sample folder, including `.github/` and `workflow-examples/`, into its own GitHub repository (public or private), with any repository name you prefer. This lets you run workflows in isolation using your own Docker Hub username, credentials, and Azure configuration.
 
 - Read-only mock product data
 - **No** database integration
@@ -8,7 +8,7 @@ We suggest copying only the contents of this sample folder, including `.github/`
 
 ## Run instructions
 
-From the directory containing `app.py` and `requirements.txt` (your repository root if copied as suggested), run:
+From your local copy of that repository, where `app.py` and `requirements.txt` are located, run:
 
 ```sh
 pip install -r requirements.txt
