@@ -4,12 +4,16 @@
 
 ## Setup
 
+> **Secrets in public repositories:** It is fine to use GitHub Actions secrets in a public repository. They are not public: only users with the required permissions can manage them, and workflows can access values explicitly supplied through `${{ secrets.NAME }}`. Saved values cannot be viewed in the settings. **NEVER EVER commit secrets to Git**, including tokens, passwords, or Azure publish-profile files. Store them under **Settings > Secrets and variables > Actions > Secrets**, reference them in the build/publication/deployment YAML, and never print them in logs. Ordinary Actions variables are for non-sensitive configuration.
+
+In your dedicated personal repository, copy the linked workflow to `.github/workflows/deploy-store-api.yml`. The commands below assume the contents of `demo-app` are at your repository root. Change the workflow's test `working-directory` from `demo-app` to `.` and its Docker build context from `./demo-app` to `.`. If you keep the app in a subfolder, use that path instead. Configure the variables and secrets below in your own repository.
+
 1. Create a public Docker Hub repository named `pro2004-store-api` and a personal access token with read/write access.
 2. Publish an initial image using your Docker Hub username:
 
    ```sh
    docker login
-   docker build -t <username>/pro2004-store-api:initial ./demo-app
+   docker build -t <username>/pro2004-store-api:initial .
    docker push <username>/pro2004-store-api:initial
    ```
 

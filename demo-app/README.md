@@ -1,12 +1,14 @@
 # Store API
 
+We suggest copying only the contents of this sample folder into the root of a dedicated personal GitHub repository (public or private), with any repository name you prefer. This lets you run workflows in isolation using your own Docker Hub username, credentials, and Azure configuration.
+
 - Read-only mock product data
 - **No** database integration
 - **No** authentication/authorization
 
 ## Run instructions
 
-From the `demo-app` directory, run:
+From the directory containing `app.py` and `requirements.txt` (your repository root if copied as suggested), run:
 
 ```sh
 pip install -r requirements.txt
@@ -23,10 +25,16 @@ An unknown product ID, such as `/products/999`, returns **404**. Products can on
 
 ## Run tests
 
-From the `demo-app` directory, after installing the dependencies, run:
+From the same directory, after installing the dependencies, run:
 
 ```sh
 python -m unittest discover -s tests
 ```
 
 The tests use Flask's test client, so you do not need to start the server.
+
+## Add the deployment workflow
+
+> **Secrets in public repositories:** It is fine to use GitHub Actions secrets in a public repository. They are not public: only users with the required permissions can manage them, and workflows can access values explicitly supplied through `${{ secrets.NAME }}`. Saved values cannot be viewed in the settings. **NEVER EVER commit secrets to Git**, including tokens, passwords, or Azure publish-profile files. Store them under **Settings > Secrets and variables > Actions > Secrets**, reference them in the build/publication/deployment YAML, and never print them in logs. Ordinary Actions variables are for non-sensitive configuration.
+
+Follow the [Module 2 setup instructions](https://github.com/Oslo-Nye-Fagskole/pro2004-samples/tree/main/Module%202) to copy the workflow into `.github/workflows/` and configure your own repository variables and secrets. If the app is at your repository root, change the workflow's `working-directory: demo-app` to `working-directory: .` and the Docker build context from `./demo-app` to `.`.
