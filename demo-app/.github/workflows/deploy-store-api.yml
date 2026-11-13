@@ -30,13 +30,13 @@ jobs:
           python-version: '3.13'
 
       - name: Install dependencies and run tests
-        working-directory: demo-app
+        working-directory: .
         run: |
           pip install -r requirements.txt
           python -m unittest discover -s tests
 
       - name: Build the image
-        run: docker build -t "$IMAGE" ./demo-app
+        run: docker build -t "$IMAGE" .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3

@@ -1,35 +1,5 @@
-# Module 2 - DevOps and CI/CD Pipelines
+# Module 2: DevOps and CI/CD Pipelines
 
-[GitHub Actions workflow](../.github/workflows/deploy-store-api.yml) for the [demo app](../demo-app/): test, build, publish to Docker Hub, and deploy to Azure Web App on a push to `main`. Failed tests stop deployment. Images are tagged with the commit ID.
+Module 2 uses the [Store API and its included GitHub Actions workflow](../demo-app/) to demonstrate automated testing, image publication to Docker Hub, and deployment to Azure.
 
-## Setup
-
-> **Secrets in public repositories:** It is fine to use GitHub Actions secrets in a public repository. They are not public: only users with the required permissions can manage them, and workflows can access values explicitly supplied through `${{ secrets.NAME }}`. Saved values cannot be viewed in the settings. **NEVER EVER commit secrets to Git**, including tokens, passwords, or Azure publish-profile files. Store them under **Settings > Secrets and variables > Actions > Secrets**, reference them in the build/publication/deployment YAML, and never print them in logs. Ordinary Actions variables are for non-sensitive configuration.
-
-In your dedicated personal repository, copy the linked workflow to `.github/workflows/deploy-store-api.yml`. The commands below assume the contents of `demo-app` are at your repository root. Change the workflow's test `working-directory` from `demo-app` to `.` and its Docker build context from `./demo-app` to `.`. If you keep the app in a subfolder, use that path instead. Configure the variables and secrets below in your own repository.
-
-1. Create a public Docker Hub repository named `pro2004-store-api` and a personal access token with read/write access.
-2. Publish an initial image using your Docker Hub username:
-
-   ```sh
-   docker login
-   docker build -t <username>/pro2004-store-api:initial .
-   docker push <username>/pro2004-store-api:initial
-   ```
-
-3. Create an Azure Linux Web App for containers using that image. Configure its container port as `8000` (`WEBSITES_PORT=8000` for classic container configuration; target port `8000` for sidecar configuration).
-4. Under **Configuration → General settings**, enable **SCM Basic Auth Publishing Credentials**. Add the app setting `WEBSITE_WEBDEPLOY_USE_SCM=true`, then download the publish profile from **Overview**. See [Microsoft's setup guidance](https://learn.microsoft.com/en-us/azure/app-service/deploy-container-github-action#generate-deployment-credentials).
-5. In GitHub, open **Settings → Secrets and variables → Actions** and add:
-
-   | Type | Name | Value |
-   | --- | --- | --- |
-   | Variable | `DOCKERHUB_USERNAME` | Your Docker Hub username |
-   | Variable | `AZURE_WEBAPP_NAME` | Your Azure Web App name |
-   | Secret | `DOCKERHUB_TOKEN` | Your Docker Hub access token |
-   | Secret | `AZURE_WEBAPP_PUBLISH_PROFILE` | Entire downloaded publish profile contents |
-
-The Docker Hub token allows image publication; the publish profile allows Azure deployment. Keep both in GitHub secrets, and do not commit the profile file.
-
-## Run
-
-Push to `main`, then follow **Deploy Store API** in the repository's **Actions** tab. After deployment, open `https://<app-hostname>/health` using the hostname shown in Azure; it should return `{"status":"ok"}`.
+These samples are provided *out of context* for review and practice. In the ONF course, all of these topics are introduced step by step, explained in detail, and supported with work requirements for hands-on experience.
